@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Apex Horizon</string>
+    <string name="tagline">See the road before it arrives.</string>
+    <string name="logo_description">Apex Horizon logo</string>
+
+    <!-- Actions -->
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_allow">Allow</string>
+    <string name="action_open_settings">Location settings</string>
+    <string name="action_app_settings">App settings</string>
+    <string name="action_start_drive">Start drive</string>
+    <string name="action_demo">Demo / Replay</string>
+    <string name="action_history">History</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About, safety &amp; privacy</string>
+    <string name="action_understand">I understand</string>
+    <string name="action_end_drive">End drive</string>
+    <string name="action_keep_driving">Keep driving</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_save_run">Save to history</string>
+    <string name="saved_to_history">Saved to history</string>
+    <string name="action_replay">Replay this run</string>
+    <string name="action_done">Done</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_delete_all">Delete all saved runs</string>
+    <string name="action_import_gpx">Import GPX route</string>
+    <string name="action_replace">Replace</string>
+    <string name="action_reverse">Reverse</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_privacy_policy">Open privacy policy</string>
+
+    <!-- Readiness -->
+    <string name="readiness_title">SYSTEM READINESS</string>
+    <string name="camera_pipeline">Camera Pipeline</string>
+    <string name="cam_ready">Ready — live camera view with HUD overlay</string>
+    <string name="cam_needs_permission">Camera permission not granted — Sensor Mode will be used</string>
+    <string name="cam_off_setting">Off in settings — Sensor Mode (same HUD, no camera)</string>
+    <string name="cam_missing">No camera found — Sensor Mode</string>
+    <string name="location_motion">Location &amp; Motion</string>
+    <string name="loc_needs_permission">Location permission needed</string>
+    <string name="loc_gps_off">Location services are off</string>
+    <string name="loc_ready_full">GPS ready · motion sensors ready</string>
+    <string name="loc_ready_gps_only">GPS ready · motion sensors limited on this device</string>
+    <string name="route_horizon">Route Horizon</string>
+    <string name="route_loaded">Route loaded: %1$s (%2$s)</string>
+    <string name="route_predictive">Predictive mode — path estimated from motion</string>
+    <string name="route_predictive_long">No route loaded. Apex Horizon predicts the path from your motion. Import a GPX route to also get curve distances and suggested approach speeds.</string>
+
+    <!-- Dialogs -->
+    <string name="disclaimer_title">Safety first</string>
+    <string name="disclaimer_body">Apex Horizon is a driving-awareness aid, not a navigation system and not a safety system. Always follow the road, traffic signs and speed limits. Suggested speeds are estimates based on road geometry and may be wrong. Mount your phone securely before you start, never touch it while the vehicle is moving, and never rely on this app instead of your own judgement.</string>
+    <string name="gps_off_title">Location is turned off</string>
+    <string name="gps_off_body">Turn on location services so Apex Horizon can read your speed and position.</string>
+    <string name="loc_denied_title">Location permission needed</string>
+    <string name="loc_denied_body">A live drive needs your precise location to show speed and predict the road ahead. Choose “Precise” when asked, or allow it in the app settings. You can also try the Demo without any permission.</string>
+    <string name="end_drive_title">End this drive?</string>
+    <string name="end_drive_body">The camera and sensors will be released and a trip summary will be shown.</string>
+
+    <!-- Drive HUD -->
+    <string name="badge_demo">DEMO</string>
+    <string name="badge_replay">REPLAY</string>
+    <string name="curve_left">Left</string>
+    <string name="curve_right">Right</string>
+    <string name="curve_in">%1$s curve in %2$s</string>
+    <string name="curve_now">%1$s curve — now</string>
+    <string name="curve_advice">Suggested approach ~%1$d %2$s</string>
+    <string name="confidence">CONFIDENCE</string>
+    <string name="load">LOAD</string>
+    <string name="trip">TRIP</string>
+
+    <!-- Summary -->
+    <string name="summary_title">Trip summary</string>
+    <string name="summary_empty">No run to show.</string>
+    <string name="stat_distance">Distance</string>
+    <string name="stat_duration">Duration</string>
+    <string name="stat_avg">Average speed</string>
+    <string name="stat_max">Max speed</string>
+    <string name="timeline_title">Speed timeline</string>
+    <string name="moments_title">Notable moments</string>
+    <string name="moments_none">A smooth run — no firm braking or intense corners detected.</string>
+    <string name="event_hard_brake">Firm braking</string>
+    <string name="event_sharp_corner">Intense corner</string>
+    <string name="run_too_short">This run was too short to save.</string>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_empty">No saved runs yet. Finish a drive and choose “Save to history”.</string>
+    <string name="delete_run_title">Delete this run?</string>
+    <string name="delete_run_body">“%1$s” will be removed from this device. This cannot be undone.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_units">Speed units</string>
+    <string name="settings_camera">Use camera when available</string>
+    <string name="settings_camera_desc">Shows the live road with the HUD on top. When off, the same HUD is drawn on a synthetic horizon (Sensor Mode).</string>
+    <string name="settings_data">Your data</string>
+    <string name="settings_data_desc">Saved runs and the imported route are stored only on this device.</string>
+    <string name="delete_all_title">Delete all saved runs?</string>
+    <string name="delete_all_body">Every saved run will be removed from this device. This cannot be undone.</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_how_title">How it works</string>
+    <string name="about_how_body">Apex Horizon blends GPS, the gyroscope and accelerometer into a smooth speed read-out and a predicted path. With the camera on, the path is drawn over the live road. Without it, the same HUD is drawn on a synthetic horizon. When GPS is weak or light is low, the confidence score drops and the app tells you it is estimating instead of inventing a line.</string>
+    <string name="about_safety_title">Safety</string>
+    <string name="about_privacy_title">Privacy</string>
+    <string name="about_privacy_body">Apex Horizon has no accounts, no ads and no analytics. The internet is used only to download the offline map files you choose; your location and destinations are never sent anywhere. Camera frames are analysed on the device for brightness only and are never stored or sent. Location is used only while a drive screen is open. Saved runs stay on this device until you delete them.</string>
+    <string name="about_permissions_title">Permissions</string>
+    <string name="about_permissions_body">Location: speed, heading and route matching while driving. Camera (optional): live road view and light level. You can use the app without the camera.</string>
+
+    <string name="privacy_policy_url" translatable="false">https://YOUR-GITHUB-USER.github.io/apex-horizon/privacy-policy.html</string>
+</resources>

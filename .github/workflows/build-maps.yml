@@ -1,0 +1,47 @@
+name: Build offline maps
+
+# Builds the offline map packs from OpenStreetMap data and publishes them in a GitHub release
+# named "maps". The app's "Update maps" button reads manifest.json from that release.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 1 * *"   # monthly, 03:17 UTC on the 1st
+
+permissions:
+  contents: write
+
+jobs:
+  build-maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install builder dependencies
+        run: pip install osmium numpy
+      - name: Download OpenStreetMap extract
+        run: |
+          SRC=$(python3 -c "import json;print(json.load(open('maps/regions.json'))['source'])")
+          curl -fL --retry 3 -o greece.osm.pbf "$SRC"
+      - name: Build packs
+        run: |
+          mkdir -p out
+          VER=$(date -u +%Y%m%d)
+          python3 - <<'PY' > regions.txt
+          import json
+          for r in json.load(open("maps/regions.json"))["regions"]:
+              print(r["id"], ",".join(str(x) for x in r["bbox"]))
+          PY
+          while read ID BBOX; do
+            python3 tools/mapbuilder/build_pack.py --input greece.osm.pbf --bbox "$BBOX" --out "out/$ID.apxm" --data-version "$VER"
+          done < regions.txt
+          python3 tools/mapbuilder/make_manifest.py --dir out --regions maps/regions.json --data-version "$VER"
+          ls -lh out
+      - name: Publish release "maps"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view maps >/dev/null 2>&1 || gh release create maps --title "Offline maps" --notes "Map data © OpenStreetMap contributors (ODbL). Built automatically."
+          gh release upload maps out/* --clobber

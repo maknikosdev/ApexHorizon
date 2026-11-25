@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Replace YOUR-GITHUB-USER / YOUR-REPO after publishing the repository (see README). -->
+    <string name="maps_manifest_url" translatable="false">https://github.com/YOUR-GITHUB-USER/ApexHorizon/releases/download/maps/manifest.json</string>
+
+    <string name="action_plan_trip">Plan a trip</string>
+    <string name="action_offline_maps">Offline maps</string>
+    <string name="to_go">TO GO</string>
+
+    <string name="mode_car">By car</string>
+    <string name="mode_walk">On foot</string>
+    <string name="plan_title">Plan a trip</string>
+    <string name="plan_from">From</string>
+    <string name="plan_to">To</string>
+    <string name="plan_my_location">My location</string>
+    <string name="plan_search_hint">Search a place or street</string>
+    <string name="plan_pick_on_map">Pick on map</string>
+    <string name="plan_choose_destination">Choose destination</string>
+    <string name="plan_calculate">Calculate route</string>
+    <string name="plan_start">Start guided drive</string>
+    <string name="plan_clear">Clear</string>
+    <string name="plan_no_maps_title">No offline maps yet</string>
+    <string name="plan_no_maps_body">Download a map region once while you are online. After that, planning and guidance work without any internet connection.</string>
+    <string name="plan_tap_hint">Long-press the map to set a point. Tap a place name to select it.</string>
+    <string name="plan_set_as_from">Set as start</string>
+    <string name="plan_set_as_to">Set as destination</string>
+    <string name="plan_route_summary">%1$s · about %2$s</string>
+    <string name="plan_no_results">No results in your downloaded maps</string>
+
+    <string name="maps_title">Offline maps</string>
+    <string name="maps_intro">Maps are free, come from OpenStreetMap and are stored on this device, so routes and guidance work without internet.</string>
+    <string name="maps_check_updates">Update maps</string>
+    <string name="maps_checking">Checking…</string>
+    <string name="maps_up_to_date">All your maps are up to date</string>
+    <string name="maps_download">Download</string>
+    <string name="maps_update">Update</string>
+    <string name="maps_cancel">Cancel</string>
+    <string name="maps_installed">Installed</string>
+    <string name="maps_not_installed">Not downloaded</string>
+    <string name="maps_update_available">Update available</string>
+    <string name="maps_confirm_title">Download %1$s?</string>
+    <string name="maps_confirm_body">This file is about %1$s. Use Wi-Fi if you can, because mobile data charges may apply.</string>
+    <string name="maps_delete_title">Delete this map?</string>
+    <string name="maps_delete_body">You can download it again later. Routes inside this region will not be available offline until then.</string>
+    <string name="maps_attribution">© OpenStreetMap contributors</string>
+    <string name="maps_hint_check">Tap “Update maps” while online to see available regions and updates.</string>
+</resources>

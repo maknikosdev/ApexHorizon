@@ -1,0 +1,12 @@
+{
+  "source": "https://download.geofabrik.de/europe/greece-latest.osm.pbf",
+  "regions": [
+    { "id": "attica",               "name": "Attica",                         "bbox": [37.60, 23.20, 38.45, 24.10] },
+    { "id": "central-greece",       "name": "Central Greece & Thessaly",      "bbox": [38.15, 21.20, 40.20, 24.60] },
+    { "id": "peloponnese",          "name": "Peloponnese & Western Greece",   "bbox": [36.30, 20.60, 38.40, 23.30] },
+    { "id": "macedonia-thrace",     "name": "Macedonia & Thrace",             "bbox": [39.90, 20.80, 41.80, 26.70] },
+    { "id": "epirus-ionian",        "name": "Epirus & Ionian Islands",        "bbox": [38.50, 19.30, 40.20, 21.40] },
+    { "id": "crete",                "name": "Crete",                          "bbox": [34.80, 23.40, 35.75, 26.40] },
+    { "id": "aegean-islands",       "name": "Aegean Islands",                 "bbox": [35.20, 24.50, 39.90, 28.30] }
+  ]
+}
