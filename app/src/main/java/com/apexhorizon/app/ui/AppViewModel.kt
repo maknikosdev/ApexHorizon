@@ -293,26 +293,25 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         _plan.value = st.copy(busy = true, error = null, result = null)
         viewModelScope.launch {
             val origin = st.from?.latLon ?: myLocation()
-            val outcome = withContext(Dispatchers.Default) {
+            var error: String? = null
+            var packId: String? = null
+            var plan: com.apexhorizon.app.maps.RoutePlan? = null
+            withContext(Dispatchers.Default) {
+                val startPack = origin?.let { packFor(it) }
+                val endPack = packFor(dest.latLon)
                 when {
-                    origin == null -> "Your location is not available yet. Choose a starting point on the map or in search."
-                    packFor(origin) == null -> "The start is outside your downloaded maps. Download the region first."
-                    packFor(dest.latLon) == null -> "The destination is outside your downloaded maps. Download the region first."
-                    packFor(origin) !== packFor(dest.latLon) -> "Start and destination are in different map regions. Routing between regions is not supported yet."
+                    origin == null -> error = "Your location is not available yet. Choose a starting point on the map or in search."
+                    startPack == null -> error = "The start is outside your downloaded maps. Download the region first."
+                    endPack == null -> error = "The destination is outside your downloaded maps. Download the region first."
+                    startPack !== endPack -> error = "Start and destination are in different map regions. Routing between regions is not supported yet."
                     else -> {
-                        val lp = packFor(origin)!!
-                        val plan = lp.router.route(origin, dest.latLon, st.mode)
-                        if (plan == null) "No drivable route found between these points." else Pair(lp.id, plan)
+                        plan = startPack.router.route(origin, dest.latLon, st.mode)
+                        packId = startPack.id
+                        if (plan == null) error = "No route found between these points."
                     }
                 }
             }
-            if (outcome is Pair<*, *>) {
-                @Suppress("UNCHECKED_CAST")
-                val (id, plan) = outcome as Pair<String, com.apexhorizon.app.maps.RoutePlan>
-                _plan.value = _plan.value.copy(busy = false, result = plan, packId = id)
-            } else {
-                _plan.value = _plan.value.copy(busy = false, error = outcome as String)
-            }
+            _plan.value = _plan.value.copy(busy = false, result = plan, packId = packId, error = error)
         }
     }
 
