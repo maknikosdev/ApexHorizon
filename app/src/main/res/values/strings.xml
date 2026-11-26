@@ -110,5 +110,5 @@
     <string name="about_permissions_title">Permissions</string>
     <string name="about_permissions_body">Location: speed, heading and route matching while driving. Camera (optional): live road view and light level. You can use the app without the camera.</string>
 
-    <string name="privacy_policy_url" translatable="false">https://YOUR-GITHUB-USER.github.io/apex-horizon/privacy-policy.html</string>
+    <string name="privacy_policy_url" translatable="false">https://maknikosdev.github.io/ApexHorizon/privacy-policy.html</string>
 </resources>

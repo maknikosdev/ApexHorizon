@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Replace YOUR-GITHUB-USER / YOUR-REPO after publishing the repository (see README). -->
-    <string name="maps_manifest_url" translatable="false">https://github.com/YOUR-GITHUB-USER/ApexHorizon/releases/download/maps/manifest.json</string>
+    <!-- Points to the maps release of the GitHub repository (see README). -->
+    <string name="maps_manifest_url" translatable="false">https://github.com/maknikosdev/ApexHorizon/releases/download/maps/manifest.json</string>
 
     <string name="action_plan_trip">Plan a trip</string>
     <string name="action_offline_maps">Offline maps</string>
